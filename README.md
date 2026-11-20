@@ -1,4 +1,7 @@
-Manifest-Version: 1.0 Project-Name: Web Tech Team Project Main-Entry: index.html Stylesheets: Styles.css, Abhinav.css, Ganesh.css, Samreen.css, Fathima.css Scripts: Script.js
+Manifest-Version: 1.0 
+Project-Name: Web Tech Team Project 
+Main-Entry: index.html Stylesheets: Styles.css, Abhinav.css, Ganesh.css, Samreen.css, Fathima.css 
+Scripts: Script.js
 
 Team-Members:
 
