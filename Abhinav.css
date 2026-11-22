@@ -1,0 +1,59 @@
+*
+{
+    background-color: azure;
+
+    margin: 0;
+    padding: 0;
+
+}
+nav
+{
+    background-color: azure;
+    box-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.132);
+    padding-top:10px ;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav img
+{
+    height: 28px;
+    padding: 10px;
+    margin-left: 180px;
+}
+
+
+
+#Select-loaction
+{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.504);
+}
+
+#search-bar
+{
+    padding: 10px;
+    border-radius: 5px;
+    border: 0.1px solid rgba(0, 0, 0, 0.147);
+    border: none;
+    padding-right: 500px;
+}
+
+
+#search-bar:hover
+{
+    border: none;
+}
+
+.search-bar{
+    border: 0.1px solid rgba(0, 0, 0, 0.147);
+    border-radius: 7px;
+    margin-left: 10px;
+}
+
+#fa-solid-fa-magnifying-glass
+{
+    margin-left: 10px;
+}
