@@ -57,3 +57,39 @@ nav img
 {
     margin-left: 10px;
 }
+
+#nav-2
+{
+    padding: 10px;
+    padding-bottom: 15px;
+    border: 0.1px solid rgba(0, 0, 0, 0.147);
+    display: flex;
+    align-items: center;
+}
+
+#nav-2-inner-div
+{
+    margin-left: 33px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#items
+{
+    height: 25px;
+}
+
+
+#items-discription
+{
+     font-family: "MyCustomFont";
+  src: url("./assests/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+}
+
+
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./assests/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+}
+
