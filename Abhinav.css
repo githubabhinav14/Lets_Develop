@@ -69,10 +69,10 @@ nav img
 
 #nav-2-inner-div
 {
-    margin-left: 33px;
+    margin-left: 28px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 9.5px;
 }
 
 #items
@@ -84,12 +84,28 @@ nav img
 #items-discription
 {
      font-family: "MyCustomFont";
-  src: url("./assests/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+    src: url("./assests/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf");
 }
 
 
 @font-face {
   font-family: "MyCustomFont";
   src: url("./assests/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+}
+
+#Below-nav-img
+{
+    border-radius: 10px;
+    height: 205px;
+    margin-left: 180px;
+    margin-top: 20px;
+}
+
+#shop-category-images
+{
+    margin: 5px;
+    height: 129px;
+    
+
 }
 

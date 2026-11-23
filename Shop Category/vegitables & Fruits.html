@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *
+{
+    background-color: azure;
+
+    margin: 0;
+    padding: 0;
+
+}
+nav
+{
+    background-color: azure;
+    box-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.132);
+    padding-top:10px ;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav img
+{
+    height: 28px;
+    padding: 10px;
+    margin-left: 180px;
+}
+
+
+
+#Select-loaction
+{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.504);
+}
+
+#search-bar
+{
+    padding: 10px;
+    border-radius: 5px;
+    border: 0.1px solid rgba(0, 0, 0, 0.147);
+    border: none;
+    padding-right: 500px;
+}
+
+
+#search-bar:hover
+{
+    border: none;
+}
+
+.search-bar{
+    border: 0.1px solid rgba(0, 0, 0, 0.147);
+    border-radius: 7px;
+    margin-left: 10px;
+}
+
+#fa-solid-fa-magnifying-glass
+{
+    margin-left: 10px;
+}
+
+#nav-2
+{
+    padding: 10px;
+    padding-bottom: 15px;
+    border: 0.1px solid rgba(0, 0, 0, 0.147);
+    display: flex;
+    align-items: center;
+}
+
+#nav-2-inner-div
+{
+    margin-left: 28px;
+    display: flex;
+    align-items: center;
+    gap: 9.5px;
+}
+
+#items
+{
+    height: 25px;
+}
+
+
+#items-discription
+{
+     font-family: "MyCustomFont";
+    src: url("./assests/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+}
+
+
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./assests/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+}
+
+#Below-nav-img
+{
+    border-radius: 10px;
+    height: 205px;
+    margin-left: 180px;
+    margin-top: 20px;
+}
+
+#shop-category-images
+{
+    margin: 5px;
+    
+
+}
+
+
+</style>
+<body>
+    <nav>
+        <a href="https://www.zepto.com/"><img src="./zepto-nav.png" alt="#"></a>
+            <div>
+                <b><i class="fa fa-bolt" style="font-size:13px"></i> 12 Minutes</b><br>
+                <b><a href="./index.html" id="Select-loaction">Select Location</a></b>
+            </div>
+            
+            <div class="search-bar"> 
+                <i class="fa-solid fa-magnifying-glass" id="fa-solid-fa-magnifying-glass"></i><input type="text" placeholder="Search for Products....." id="search-bar">
+            </div>
+
+            <a href="./Login.html" style="text-decoration: none; color: black;">
+                <div style="margin-left: 20px;">
+                <i class="bi bi-person" style="font-size:23px"></i>
+                <br>
+                <p style="font-size: 11px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Login</p>
+            </div>
+            </a>
+
+            <a href="./Login.html" style="text-decoration: none; color: black;">
+                <div style="margin-left: 20px;">
+                <i class="bi bi-cart" style="font-size:22px"></i>
+                <br>
+                <p style="font-size: 12px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Cart</p>
+            </div>
+            </a>
+            
+    </nav>
+
+    <main>
+        <div id="nav-2">
+                <div id="nav-2-inner-div" style="margin-left: 180px;">
+                    <img src="./assests/icons/all.png" alt="#" id="items">
+                    <span id="items-discription">All</span>
+                </div>
+
+                <div id="nav-2-inner-div">
+                    <img src="./assests/icons/Cafe.png" alt="#" id="items">
+                    <span id="items-discription">Cafe</span>
+                </div>
+
+                <div id="nav-2-inner-div">
+                    <img src="./assests/icons/brush.png" alt="#" id="items">
+                    <span id="items-discription">Home</span>
+                </div>
+
+                <div id="nav-2-inner-div">
+                    <img src="./assests/icons/Duck.png" alt="#" id="items">
+                    <span id="items-discription">Toys</span>
+                </div>
+
+                <div id="nav-2-inner-div">
+                    <img src="./assests/icons/Apple.png" alt="#" id="items">
+                    <span id="items-discription">Fresh</span>
+                </div>
+
+                <div id="nav-2-inner-div">
+                    <img src="./assests/icons/Headset.png" alt="#" id="items">
+                    <span id="items-discription">Electronics</span>
+                </div>
+
+                <div id="nav-2-inner-div">
+                    <img src="./assests/icons/phone.png" alt="#" id="items">
+                    <span id="items-discription">Mobiles</span>
+                </div>
+
+                <div id="nav-2-inner-div">
+                    <img src="./assests/icons/brush2.png" alt="#" id="items">
+                    <span id="items-discription">Beauty</span>
+                </div>
+
+                <div id="nav-2-inner-div">
+                    <img src="./assests/icons/Tshirt.png" alt="#" id="items">
+                    <span id="items-discription">Fashion</span>
+                </div>
+
+                <div id="nav-2-inner-div">
+                    <img src="./assests/icons/Capsule.png" alt="#" id="items">
+                    <span id="items-discription">Pharmacy</span>
+                </div>
+            </div>
+            <h1>vegitables & Fruits</h1>
+</body>
+</html>
