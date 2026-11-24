@@ -22,7 +22,7 @@
                 <i class="fa-solid fa-magnifying-glass" id="fa-solid-fa-magnifying-glass"></i><input type="text" placeholder="Search for Products....." id="search-bar">
             </div>
 
-            <a href="./Login.html" style="text-decoration: none; color: black;">
+            <a href="./Login.html" class="open-login" style="text-decoration: none; color: black;">
                 <div style="margin-left: 20px;">
                 <i class="bi bi-person" style="font-size:23px"></i>
                 <br>
@@ -30,7 +30,7 @@
             </div>
             </a>
 
-            <a href="./Login.html" style="text-decoration: none; color: black;">
+            <a href="./Login.html" class="open-login" style="text-decoration: none; color: black;">
                 <div style="margin-left: 20px;">
                 <i class="bi bi-cart" style="font-size:22px"></i>
                 <br>
@@ -126,5 +126,115 @@
                 
             </section>
     </main>
+
+    <!-- login popup -->
+    <div class="login-modal" id="login-modal">
+        <div class="login-modal-box">
+
+            <div class="login-modal-left">
+                <img src="./assests/icons/desktop-login-hero.png" alt="Zepto">
+            </div>
+
+            <div class="login-modal-right">
+                <button type="button" class="login-modal-close" id="login-close">&times;</button>
+
+                <h2>Groceries delivered in <span>minutes</span></h2>
+
+                <div class="login-phone">
+                    <button type="button" class="country-trigger" id="country-trigger">
+                        <img src="./assests/flags/in.png" alt="Flag" id="selected-flag">
+                        <span id="selected-code">+91</span>
+                        <span class="arrow">&#9660;</span>
+                    </button>
+                    <input type="tel" placeholder="Enter Phone Number" maxlength="10">
+                </div>
+
+                <button type="button" class="login-continue">Continue</button>
+
+                <p>By Continuing, you agree to our</p>
+                <p class="login-terms">Terms of Use &amp; Privacy Policy</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- select country page on login page -->
+    <div class="country-modal" id="country-modal">
+        <div class="country-modal-box">
+
+            <div class="country-modal-header">
+                <h3>Select Country</h3>
+                <button type="button" class="country-modal-close" id="country-close">&times;</button>
+            </div>
+
+            <div class="country-search">
+                <i class="bi bi-search"></i>
+                <input type="text" id="country-search-input" placeholder="Search country">
+            </div>
+
+            <div class="country-list-wrap">
+                <ul class="country-list" id="country-list">
+                    <li class="country-item" data-flag="in" data-code="+91">
+                        <img src="./assests/flags/in.png" alt="India flag">
+                        <span class="country-name">India</span>
+                        <span class="country-code">+91</span>
+                    </li>
+                    <li class="country-item" data-flag="us" data-code="+1">
+                        <img src="./assests/flags/us.png" alt="United States flag">
+                        <span class="country-name">United States</span>
+                        <span class="country-code">+1</span>
+                    </li>
+                    <li class="country-item" data-flag="ae" data-code="+971">
+                        <img src="./assests/flags/ae.png" alt="United Arab Emirates flag">
+                        <span class="country-name">United Arab Emirates</span>
+                        <span class="country-code">+971</span>
+                    </li>
+                    <li class="country-item" data-flag="gb" data-code="+44">
+                        <img src="./assests/flags/gb.png" alt="United Kingdom flag">
+                        <span class="country-name">United Kingdom</span>
+                        <span class="country-code">+44</span>
+                    </li>
+                    <li class="country-item" data-flag="sg" data-code="+65">
+                        <img src="./assests/flags/sg.png" alt="Singapore flag">
+                        <span class="country-name">Singapore</span>
+                        <span class="country-code">+65</span>
+                    </li>
+                    <li class="country-item" data-flag="au" data-code="+61">
+                        <img src="./assests/flags/au.png" alt="Australia flag">
+                        <span class="country-name">Australia</span>
+                        <span class="country-code">+61</span>
+                    </li>
+                    <li class="country-item" data-flag="ca" data-code="+1">
+                        <img src="./assests/flags/ca.png" alt="Canada flag">
+                        <span class="country-name">Canada</span>
+                        <span class="country-code">+1</span>
+                    </li>
+                    <li class="country-item" data-flag="nz" data-code="+64">
+                        <img src="./assests/flags/nz.png" alt="New Zealand flag">
+                        <span class="country-name">New Zealand</span>
+                        <span class="country-code">+64</span>
+                    </li>
+                    <li class="country-item" data-flag="th" data-code="+66">
+                        <img src="./assests/flags/th.png" alt="Thailand flag">
+                        <span class="country-name">Thailand</span>
+                        <span class="country-code">+66</span>
+                    </li>
+                    <li class="country-item" data-flag="my" data-code="+60">
+                        <img src="./assests/flags/my.png" alt="Malaysia flag">
+                        <span class="country-name">Malaysia</span>
+                        <span class="country-code">+60</span>
+                    </li>
+                    <li class="country-item" data-flag="za" data-code="+27">
+                        <img src="./assests/flags/za.png" alt="South Africa flag">
+                        <span class="country-name">South Africa</span>
+                        <span class="country-code">+27</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./Script.js"></script>
 </body>
 </html>
