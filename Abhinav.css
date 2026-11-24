@@ -1,30 +1,70 @@
+/* added comments to understand code better */
+
+/* ---------- Base / reset ---------- */
+*,
+*::before,
+*::after
+{
+    box-sizing: border-box;
+}
+
 *
 {
     background-color: rgb(255, 255, 255);
-
     margin: 0;
     padding: 0;
-
 }
+
+:root
+{
+    --content-max: 1200px;
+    /* side padding: 12px minimum, centres the content on big screens */
+    --pad-x: max(12px, calc((100% - var(--content-max)) / 2));
+}
+
+html
+{
+    -webkit-text-size-adjust: 100%;
+}
+
+img
+{
+    max-width: 100%;
+}
+
+@font-face
+{
+    font-family: "MyCustomFont";
+    src: url("./assests/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+}
+
+
+/* ---------- Top navbar ---------- */
 nav
 {
     background-color: rgb(255, 255, 255);
     box-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.132);
-    padding-top:10px ;
-    padding-bottom: 10px;
+    padding-block: 10px;
+    padding-inline: var(--pad-x);
     display: flex;
     align-items: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 10px 20px;
 }
 
-nav img
+nav > a img
 {
+    box-sizing: content-box;     /* so the height below is the real logo height */
+    display: block;
     height: 28px;
-    padding: 10px;
-    margin-left: 180px;
+    width: auto;
+    padding: 10px 10px 10px 0;
 }
 
-
+.nav-location
+{
+    white-space: nowrap;
+}
 
 #Select-loaction
 {
@@ -32,25 +72,14 @@ nav img
     color: rgba(0, 0, 0, 0.504);
 }
 
-#search-bar
+.search-bar
 {
-    padding: 10px;
-    border-radius: 5px;
-    border: 0.1px solid rgba(0, 0, 0, 0.147);
-    border: none;
-    padding-right: 500px;
-}
-
-
-#search-bar:hover
-{
-    border: none;
-}
-
-.search-bar{
+    flex: 1 1 260px;
+    max-width: 640px;
+    display: flex;
+    align-items: center;
     border: 0.1px solid rgba(0, 0, 0, 0.147);
     border-radius: 7px;
-    margin-left: 10px;
 }
 
 #fa-solid-fa-magnifying-glass
@@ -58,59 +87,153 @@ nav img
     margin-left: 10px;
 }
 
-#nav-2
+#search-bar
 {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
     padding: 10px;
-    padding-bottom: 15px;
-    border: 0.1px solid rgba(0, 0, 0, 0.147);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+#search-bar:hover
+{
+    border: none;
+}
+
+.nav-action
+{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.search-bar + .nav-action
+{
+    margin-left: auto;          /* pushes Login + Cart to the right */
+}
+
+.nav-action div
+{
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-#nav-2-inner-div
+.nav-action p
 {
-    margin-left: 28px;
+    font-size: 12px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* ---------- Category strip (All, Cafe, Home ...) ---------- */
+#nav-2
+{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-block: 10px;
+    padding-inline: var(--pad-x);
+    border: 0.1px solid rgba(0, 0, 0, 0.147);
+    overflow-x: auto;                     /* swipe sideways on small screens */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+#nav-2::-webkit-scrollbar
+{
+    display: none;
+}
+
+.nav-2-item
+{
     display: flex;
     align-items: center;
     gap: 9.5px;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
-#items
+.items
 {
     height: 25px;
+    width: auto;
 }
 
-
-#items-discription
+.items-discription
 {
-     font-family: "MyCustomFont";
-    src: url("./assests/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+    font-family: "MyCustomFont", sans-serif;
 }
 
 
-@font-face {
-  font-family: "MyCustomFont";
-  src: url("./assests/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+/* ---------- Banner under the navbar ---------- */
+.banner-section
+{
+    padding-top: 20px;
+    padding-inline: var(--pad-x);
 }
 
 #Below-nav-img
 {
+    display: block;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
-    height: 205px;
-    margin-left: 180px;
-    margin-top: 20px;
 }
 
-#shop-category-images
+
+/* ---------- Shop By Category ---------- */
+.section-header
 {
-    margin: 5px;
-    height: 129px;
-    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-block: 10px;
+    padding-inline: var(--pad-x);
+    margin-top: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
+.section-header h2
+{
+    font-size: clamp(18px, 2.4vw, 24px);
+}
+
+.see-all
+{
+    color: red;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.category-grid
+{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);    /* 8 per row on desktop */
+    gap: 10px;
+    padding-inline: var(--pad-x);
+    padding-bottom: 30px;
+}
+
+.category-grid a
+{
+    display: block;
+}
+
+.shop-category-images
+{
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 
-/* login popup samreen */
+/* ---------- Login popup ---------- */
 .login-modal
 {
     display: none;
@@ -119,6 +242,8 @@ nav img
     left: 0;
     width: 100%;
     height: 100%;
+    padding: 12px;
+    overflow-y: auto;
     background-color: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
@@ -134,7 +259,10 @@ nav img
 {
     display: flex;
     width: 810px;
-    height: 525px;
+    max-width: 100%;
+    min-width: 0;               /* lets the box shrink on very small phones */
+    min-height: 525px;
+    margin: auto;
     background-color: #ffe0c7;
     border-radius: 20px;
     padding: 12px;
@@ -233,6 +361,7 @@ nav img
 .login-phone input
 {
     flex: 1;
+    width: 0;
     min-width: 0;
     border: none;
     outline: none;
@@ -266,7 +395,7 @@ nav img
 }
 
 
-/* select country popup fathima */
+/* ---------- Select country popup ---------- */
 .country-modal
 {
     display: none;
@@ -275,6 +404,7 @@ nav img
     left: 0;
     width: 100%;
     height: 100%;
+    padding: 12px;
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
@@ -289,7 +419,9 @@ nav img
 .country-modal-box
 {
     width: 540px;
+    max-width: 100%;
     max-height: 608px;
+    max-height: min(608px, 90vh);
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
@@ -340,6 +472,7 @@ nav img
 .country-search input
 {
     flex: 1;
+    min-width: 0;
     border: none;
     outline: none;
     font-size: 15px;
@@ -350,6 +483,7 @@ nav img
     background-color: #f4f5f7;
     padding: 14px;
     overflow-y: auto;
+    min-height: 0;
 }
 
 .country-list
@@ -365,7 +499,7 @@ nav img
     display: flex;
     align-items: center;
     gap: 14px;
-    height: 54px;
+    min-height: 54px;
     border-bottom: 1px solid #eee;
     cursor: pointer;
 }
@@ -399,4 +533,155 @@ nav img
     color: #555;
     font-size: 14px;
     background-color: transparent;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* ---- Extra wide screens ---- */
+@media (min-width: 1600px)
+{
+    :root
+    {
+        --content-max: 1400px;
+    }
+}
+
+/* ---- Tablets ---- */
+@media (max-width: 900px)
+{
+    nav
+    {
+        gap: 10px 16px;
+    }
+
+    #nav-2
+    {
+        gap: 22px;
+    }
+
+    .category-grid
+    {
+        gap: 8px;
+    }
+}
+
+/* ---- Large phones ---- */
+@media (max-width: 700px)
+{
+    /* navbar: row 1 = logo, location, login, cart  |  row 2 = full-width search */
+    .search-bar
+    {
+        order: 10;
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    #search-bar
+    {
+        font-size: 16px;      /* stops iPhone auto-zoom when typing */
+    }
+
+    /* 4 category images per row */
+    .category-grid
+    {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+    }
+
+    /* phones: keep the left part of the banner (title + button) readable */
+    #Below-nav-img
+    {
+        min-height: 96px;
+        object-fit: cover;
+        object-position: left center;
+    }
+
+    /* login popup: hide the big picture, show only the form */
+    .login-modal-box
+    {
+        min-height: 0;
+        max-width: 420px;
+    }
+
+    .login-modal-left
+    {
+        display: none;
+    }
+
+    .login-modal-right
+    {
+        width: 100%;
+        padding: 64px 20px 24px 20px;
+    }
+
+    .login-modal-right h2
+    {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+/* ---- Small phones ---- */
+@media (max-width: 480px)
+{
+    nav
+    {
+        gap: 8px 12px;
+    }
+
+    nav > a img
+    {
+        height: 24px;
+        padding: 6px 6px 6px 0;
+    }
+
+    .nav-location
+    {
+        font-size: 12px;
+    }
+
+    #nav-2
+    {
+        gap: 18px;
+    }
+
+    .items-discription
+    {
+        font-size: 13px;
+    }
+
+    .banner-section
+    {
+        padding-top: 12px;
+    }
+
+    .country-modal-header
+    {
+        padding: 16px 16px 8px 16px;
+    }
+
+    .country-modal-header h3
+    {
+        font-size: 18px;
+    }
+
+    .country-search
+    {
+        margin: 0 16px 12px 16px;
+        height: 48px;
+        padding: 0 14px;
+    }
+
+    .country-list-wrap
+    {
+        padding: 10px;
+    }
+
+    .country-list
+    {
+        padding: 0 12px;
+    }
 }
